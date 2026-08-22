@@ -699,10 +699,7 @@ def render_sidebar():
         # About Expander
         with st.expander("ℹ️ About Finly"):
             st.markdown("""
-            **Finly Hackathon MVP v1.0**
-            • Simple, reliable personal finance platform
-            • Streamlit + SQLite + Plotly
-            • Google Gemini 2.5 Flash Coach
+            Simple personal finance & financial literacy platform with AI-powered guidance.
             """)
 
         st.markdown("<br><br>", unsafe_allow_html=True)
