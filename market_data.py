@@ -42,5 +42,5 @@ MARKET_UPDATES = [
 ]
 
 MARKET_DISCLAIMER = """
-⚠️ The market information below is sample/demo data provided for learning and illustrative purposes only. 
+⚠️ The market information below is sample/demo data only. 
 """
