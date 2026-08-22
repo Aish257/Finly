@@ -55,9 +55,9 @@ def render_back_to_dashboard():
             st.session_state.current_page = "Dashboard"
             st.rerun()
 
-# ----------------------------------------------------
+
 # AUTHENTICATION SCREEN
-# ----------------------------------------------------
+
 def render_auth_page():
     st.markdown("<br><br>", unsafe_allow_html=True)
     c1, c2, c3 = st.columns([1, 2, 1])
@@ -105,9 +105,9 @@ def render_auth_page():
                 st.rerun()
             st.markdown("</div>", unsafe_allow_html=True)
 
-# ----------------------------------------------------
-# DASHBOARD (MAIN LANDING PAGE)
-# ----------------------------------------------------
+
+# DASHBOARD 
+
 def render_dashboard():
     st.markdown(f"""
     <div style='margin-bottom: 30px;'>
@@ -224,9 +224,9 @@ def render_dashboard():
             st.session_state.current_page = "AI Financial Coach"
             st.rerun()
 
-# ----------------------------------------------------
+
 # FEATURE 1: EXPENSE TRACKER
-# ----------------------------------------------------
+
 def render_expense_tracker():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>💰 Personal Expense Tracker</h1>", unsafe_allow_html=True)
@@ -296,7 +296,7 @@ def render_expense_tracker():
         </div>
         """, unsafe_allow_html=True)
 
-    # Automated Insights Box
+    # Insights Box
     st.markdown(f"""
     <div class='finly-insight'>
         💡 <b>Automated Spending Insight</b>:<br>
@@ -305,7 +305,7 @@ def render_expense_tracker():
     </div>
     """, unsafe_allow_html=True)
 
-    # Plotly Charts (Orange palette matching Image 1)
+    # Plotly Charts 
     c_chart1, c_chart2 = st.columns(2)
     orange_palette = ["#FF7A00", "#FF8A00", "#FF9800", "#FFB74D", "#FFE0B2", "#FFAB40", "#E65100"]
     
@@ -361,9 +361,9 @@ def render_expense_tracker():
                     st.success("Deleted")
                     st.rerun()
 
-# ----------------------------------------------------
+
 # FEATURE 2: LEARN INVESTING
-# ----------------------------------------------------
+
 def render_learn_investing():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>📚 Learn Investing (8 Chapters)</h1>", unsafe_allow_html=True)
@@ -413,9 +413,9 @@ def render_learn_investing():
                 correct_opt = quiz['options'][quiz['correct_index']]
                 st.error(f"❌ Incorrect. The correct answer is: **{correct_opt}**\n\nExplanation: {quiz['explanation']}")
 
-# ----------------------------------------------------
+
 # FEATURE 3: MARKET OVERVIEW
-# ----------------------------------------------------
+
 def render_market_overview():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>📈 Indian Market Overview</h1>", unsafe_allow_html=True)
@@ -439,9 +439,9 @@ def render_market_overview():
         </div>
         """, unsafe_allow_html=True)
 
-# ----------------------------------------------------
+
 # FEATURE 4: INVESTMENT SIMULATOR
-# ----------------------------------------------------
+
 def render_simulator():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>🧪 Investment Simulator (Virtual ₹10,000)</h1>", unsafe_allow_html=True)
@@ -524,9 +524,9 @@ def render_simulator():
         </div>
         """, unsafe_allow_html=True)
 
-# ----------------------------------------------------
+
 # FEATURE 5: BEGINNER MISTAKES
-# ----------------------------------------------------
+
 def render_beginner_mistakes():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>⚠️ 7 Common Beginner Financial Mistakes</h1>", unsafe_allow_html=True)
@@ -547,9 +547,9 @@ def render_beginner_mistakes():
         </div>
         """, unsafe_allow_html=True)
 
-# ----------------------------------------------------
+
 # FEATURE 6: FINANCIAL GOALS
-# ----------------------------------------------------
+
 def render_financial_goals():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>🎯 Financial Goals Tracker</h1>", unsafe_allow_html=True)
@@ -612,9 +612,9 @@ def render_financial_goals():
             st.markdown(f"<span style='color:#A1A1AA;'>Est. Monthly Saving:</span> <b style='color:#FF7A00;'>₹{req_monthly:,.0f}/mo</b>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
-# ----------------------------------------------------
+
 # FEATURE 7: AI FINANCIAL COACH
-# ----------------------------------------------------
+
 def render_ai_coach():
     render_back_to_dashboard()
     st.markdown("<h1 style='color:#FFFFFF;'>🤖 Finly AI Financial Coach</h1>", unsafe_allow_html=True)
@@ -659,9 +659,9 @@ def render_ai_coach():
                 st.markdown(response_text)
                 st.session_state.chat_history.append({"role": "assistant", "content": response_text})
 
-# ----------------------------------------------------
+
 # SECONDARY SIDEBAR
-# ----------------------------------------------------
+
 def render_sidebar():
     with st.sidebar:
         st.markdown("""
@@ -711,9 +711,9 @@ def render_sidebar():
             st.session_state.current_page = "Dashboard"
             st.rerun()
 
-# ----------------------------------------------------
+
 # MAIN APP ROUTER
-# ----------------------------------------------------
+
 def main():
     if not st.session_state.authenticated:
         render_auth_page()
