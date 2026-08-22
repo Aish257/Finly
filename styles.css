@@ -155,7 +155,7 @@ label {
     margin-bottom: 6px;
 }
 
-/* Primary Buttons: Orange Background (#FF7A00) with High Contrast WHITE Text (#FFFFFF) */
+/* Primary Buttons */
 .stButton>button {
     background-color: #FF7A00 !important;
     background: linear-gradient(135deg, #FF8A00 0%, #FF6500 100%) !important;
@@ -197,7 +197,7 @@ label {
     border-color: #FF7A00 !important;
 }
 
-/* Streamlit Tabs Styling matching Image 1 */
+/* Streamlit Tabs Styling  */
 div[data-baseweb="tab-list"] {
     background-color: #0F1015 !important;
     border-radius: 12px !important;
@@ -231,7 +231,7 @@ div[data-baseweb="tab"][aria-selected="false"] p {
     color: #A1A1AA !important;
 }
 
-/* FINAL BUTTON TEXT VISIBILITY FIX */
+
 
 .stButton>button,
 .stButton>button *,
