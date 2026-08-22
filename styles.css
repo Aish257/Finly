@@ -1,0 +1,362 @@
+/* Finly Exact Premium Theme CSS matching Image 1 */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Main Container & Body background */
+html,
+body,
+[data-testid="stAppViewContainer"] {
+    background-color: #0A0B0E !important;
+    color: #FFFFFF !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #0F1015 !important;
+    border-right: 1px solid #1F222C !important;
+}
+
+/* Base typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.02em;
+}
+
+p,
+span,
+div,
+label {
+    color: #A1A1AA;
+}
+
+/* Glassmorphic & Modern Cards */
+.finly-card {
+    background: #111318;
+    border: 1px solid #1F222C;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.finly-card:hover {
+    border-color: #FF7A00;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(255, 122, 0, 0.15);
+}
+
+.finly-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 122, 0, 0.3), transparent);
+}
+
+/* Dashboard Interactive Nav Cards */
+.dashboard-card {
+    background: #111318;
+    border: 1px solid #1F222C;
+    border-radius: 16px;
+    padding: 26px 22px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-card:hover {
+    border-color: #FF7A00;
+    box-shadow: 0 0 22px rgba(255, 122, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.dashboard-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-card-desc {
+    color: #A1A1AA;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.dashboard-card-action {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #FF7A00;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid #FF7A00;
+    border-radius: 8px;
+    background: transparent;
+    width: fit-content;
+}
+
+/* Accent Orange Classes */
+.text-gradient-orange,
+.text-gradient-blue,
+.text-gradient-green,
+.text-gradient-gold {
+    color: #FF7A00 !important;
+    background: none !important;
+    -webkit-text-fill-color: #FF7A00 !important;
+}
+
+/* Custom Metric Display */
+.metric-box {
+    background: #111318;
+    border: 1px solid #1F222C;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'Outfit', sans-serif;
+}
+
+.metric-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #A1A1AA;
+    margin-bottom: 6px;
+}
+
+/* Primary Buttons: Orange Background (#FF7A00) with High Contrast WHITE Text (#FFFFFF) */
+.stButton>button {
+    background-color: #FF7A00 !important;
+    background: linear-gradient(135deg, #FF8A00 0%, #FF6500 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35) !important;
+}
+
+.stButton>button:hover {
+    background-color: #E66E00 !important;
+    background: linear-gradient(135deg, #FF7A00 0%, #E65A00 100%) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(255, 122, 0, 0.45) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(0) !important;
+}
+
+/* Secondary Button Style: Dark Background, Orange Border, Orange Text */
+.stButton.secondary-btn>button {
+    background-color: #111318 !important;
+    background: #111318 !important;
+    color: #FF7A00 !important;
+    border: 1px solid #FF7A00 !important;
+    box-shadow: none !important;
+}
+
+.stButton.secondary-btn>button:hover {
+    background-color: #1A1D24 !important;
+    background: #1A1D24 !important;
+    color: #FF7A00 !important;
+    border-color: #FF7A00 !important;
+}
+
+/* Streamlit Tabs Styling matching Image 1 */
+div[data-baseweb="tab-list"] {
+    background-color: #0F1015 !important;
+    border-radius: 12px !important;
+    padding: 6px !important;
+    border: 1px solid #1F222C !important;
+    gap: 8px !important;
+}
+
+div[data-baseweb="tab"] {
+    background-color: transparent !important;
+    color: #A1A1AA !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+    border: none !important;
+}
+
+div[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #FF7A00 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
+}
+
+div[data-baseweb="tab"][aria-selected="true"] span,
+div[data-baseweb="tab"][aria-selected="true"] p {
+    color: #FFFFFF !important;
+}
+
+div[data-baseweb="tab"][aria-selected="false"] span,
+div[data-baseweb="tab"][aria-selected="false"] p {
+    color: #A1A1AA !important;
+}
+
+/* FINAL BUTTON TEXT VISIBILITY FIX */
+
+.stButton>button,
+.stButton>button *,
+button[kind="primary"],
+button[kind="primary"] * {
+    opacity: 1 !important;
+}
+
+/* Orange primary buttons */
+.stButton>button {
+    background: #FF7A00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+.stButton>button p,
+.stButton>button span,
+.stButton>button div {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* Dark secondary buttons */
+.stButton.secondary-btn>button,
+.stButton.secondary-btn>button * {
+    color: #FF7A00 !important;
+    opacity: 1 !important;
+}
+
+/* Streamlit Input fields */
+.stTextInput>div>div>input,
+.stNumberInput>div>div>input,
+.stSelectbox>div>div>div,
+.stDateInput>div>div>input,
+.stTextArea>div>div>textarea {
+    background-color: #111318 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #1F222C !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput>div>div>input:focus,
+.stNumberInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {
+    border-color: #FF7A00 !important;
+    box-shadow: 0 0 8px rgba(255, 122, 0, 0.3) !important;
+}
+
+/* Custom Quiz Cards */
+.quiz-card {
+    background: #111318;
+    border: 1px solid #1F222C;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.quiz-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(255, 122, 0, 0.15);
+    color: #FF7A00;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 122, 0, 0.3);
+}
+
+/* Custom Alert/Insight Boxes */
+.finly-insight {
+    background: #111318;
+    border-left: 4px solid #FF7A00;
+    border-top: 1px solid #1F222C;
+    border-right: 1px solid #1F222C;
+    border-bottom: 1px solid #1F222C;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    margin: 15px 0;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+}
+
+.finly-warning {
+    background: #111318;
+    border-left: 4px solid #FF7A00;
+    border-top: 1px solid #1F222C;
+    border-right: 1px solid #1F222C;
+    border-bottom: 1px solid #1F222C;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    margin: 15px 0;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+}
+
+/* Progress Bar Orange override */
+.stProgress>div>div>div>div {
+    background-color: #FF7A00 !important;
+}
+
+/* Hide Streamlit Branding */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0B0E;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1F222C;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF7A00;
+}
