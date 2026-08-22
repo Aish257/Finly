@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 
-# System instruction to enforce financial coach safety guardrails
+# System instruction 
 COACH_SYSTEM_PROMPT = """
 You are "Finly Coach", a friendly, patient, and beginner-focused AI financial literacy assistant for Finly.
 
@@ -15,7 +15,7 @@ STRICT SAFETY RULES:
 5. Keep explanations short, clear, encouraging, and easy to read (use bullet points when helpful).
 """
 
-# Smart offline fallback response engine
+# offline fallback response engine
 FALLBACK_RESPONSES = {
     "stock": "A stock represents fractional ownership in a business. When you buy a company's stock, you own a small piece of its assets and future earnings. Stock prices rise or fall based on company growth and market demand.",
 
@@ -45,30 +45,30 @@ def get_gemini_client():
 
     api_key = None
 
-    # ---------------------------------------------------------
+    
     # 1. Try Streamlit secrets
-    # ---------------------------------------------------------
+   
     try:
         if "GEMINI_API_KEY" in st.secrets:
             api_key = st.secrets["GEMINI_API_KEY"]
     except Exception as e:
         return None, f"Secrets Error: {e}"
 
-    # ---------------------------------------------------------
+    
     # 2. Try environment variable if secret wasn't found
-    # ---------------------------------------------------------
+    
     if not api_key:
         api_key = os.environ.get("GEMINI_API_KEY")
 
-    # ---------------------------------------------------------
+    
     # 3. Stop if no API key was found
-    # ---------------------------------------------------------
+    
     if not api_key:
         return None, "No GEMINI_API_KEY found"
 
-    # ---------------------------------------------------------
+    
     # 4. Use the new Google GenAI SDK
-    # ---------------------------------------------------------
+    
     try:
         from google import genai
 
@@ -82,9 +82,9 @@ def get_gemini_client():
     except Exception as e:
         return None, f"Gemini Client Error: {e}"
 
-    # ---------------------------------------------------------
+    
     # 5. Legacy SDK fallback
-    # ---------------------------------------------------------
+    
     try:
         import google.generativeai as genai
 
@@ -109,9 +109,9 @@ def ask_ai_coach(user_query, context=""):
 
     client_tuple, err = get_gemini_client()
 
-    # ---------------------------------------------------------
+    
     # If Gemini client could not be created
-    # ---------------------------------------------------------
+    
     if not client_tuple:
 
         # Show the real error instead of silently hiding it
@@ -137,9 +137,9 @@ def ask_ai_coach(user_query, context=""):
             "*(Note: Connect a valid Google Gemini API key to activate full real-time AI responses!)*"
         )
 
-    # ---------------------------------------------------------
+   
     # Gemini client exists
-    # ---------------------------------------------------------
+    
     sdk_type, client_obj = client_tuple
 
     full_prompt = (
@@ -150,9 +150,9 @@ def ask_ai_coach(user_query, context=""):
 
     try:
 
-        # -----------------------------------------------------
+        
         # New Google GenAI SDK
-        # -----------------------------------------------------
+        
         if sdk_type == "new_sdk":
 
             response = client_obj.models.generate_content(
@@ -163,9 +163,9 @@ def ask_ai_coach(user_query, context=""):
             if response and hasattr(response, "text") and response.text:
                 return response.text.strip()
 
-        # -----------------------------------------------------
+        
         # Legacy Google Generative AI SDK
-        # -----------------------------------------------------
+        
         elif sdk_type == "legacy_sdk":
 
             model = client_obj.GenerativeModel(
@@ -181,14 +181,8 @@ def ask_ai_coach(user_query, context=""):
 
     except Exception as e:
 
-        # IMPORTANT:
-        # Do not hide Gemini errors.
-        # Show the actual error so we can fix it.
         return f"⚠️ Gemini API Error:\n\n{e}"
 
-    # ---------------------------------------------------------
-    # If Gemini returned no usable response
-    # ---------------------------------------------------------
     return (
         "⚠️ Gemini connected, but no response was returned."
     )
