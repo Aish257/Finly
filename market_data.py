@@ -42,6 +42,5 @@ MARKET_UPDATES = [
 ]
 
 MARKET_DISCLAIMER = """
-⚠️ **Educational Disclaimer**: The market information above is strictly sample/demo data provided for learning and illustrative purposes only. 
-Finly does **NOT** offer stock-buying, selling, or investment advice. Always consult a SEBI-registered financial advisor before making real-world financial investments.
+⚠️ The market information below is sample/demo data provided for learning and illustrative purposes only. 
 """
